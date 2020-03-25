@@ -1,11 +1,13 @@
 const express = require('express');
-
+const cors = require('cors');
 const app = express();
 
 const routes = require('./routes'); //recebe as rotas do routes.js
 
 app.use(express.json());
 app.use(routes);
+app.use(cors());
+app.listen(3333);
 
 /**
  * Metodos HTTP:
@@ -31,7 +33,3 @@ app.use(routes);
  * 
  * Query Builder: table('users').select() etc
  */
-
-
-
-app.listen(3333);
